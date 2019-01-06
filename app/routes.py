@@ -8,6 +8,8 @@ selected = None
 @app.route('/', methods=['GET', 'POST'])
 @app.route('/index', methods=['GET', 'POST'])
 def index():
+	Grade.query.delete()
+	db.session.commit()
 	schools = []
 	for row in School.query.all():
 		school = {'name': row.name, 'scale': row.scale}
