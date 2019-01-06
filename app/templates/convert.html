@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% if school %}
+	<h2>{{ school }}</h2>
+{% endif %}
+<form action="" method="POST" novalidate>
+	{{ grade_form.hidden_tag() }}
+	{{ grade_form.course_name.label }}{{ grade_form.course_name(size=35) }}
+	{% for error in grade_form.course_name.errors %}
+		<span style="color: red;">[{{ error }}]</span>
+	{% endfor %}
+	{{ grade_form.credits.label }} {{ grade_form.credits(size=3) }}
+	{% for error in grade_form.credits.errors %}
+		<span style="color: red;">[{{ error }}]</span>
+	{% endfor %}
+	{{ grade_form.grade.label }} {{ grade_form.grade }}
+	{% for error in grade_form.grade.errors %}
+		<span style="color: red;">[{{ error }}]</span>
+	{% endfor %}
+	{{ grade_form.add }}
+</form>
+<div>
+	{% if grades|length > 0 %}
+	<table align="center">
+		<tr>
+			<th>Course</th>
+			<th>Credits</th>
+			<th>Grade</th>
+			<th>Grade (4.0 Scale)</th>
+		</tr>
+		{% for grade in grades %}
+		<tr>
+			<td>{{ grade[0] }}</td>
+			<td>{{ grade[1] }}</td>
+			<td>{{ grade[2] }}</td>
+			<td>{{ grade[3] }}</td>
+		</tr>
+		{% endfor %}
+	</table>
+	<div>
+		{% if gpa %}
+			<p>Converted GPA: <b>{{ gpa|round(2, 'floor') }}</b></p>
+		{% else %}
+			<p>Converted GPA: <b>{{ gpa }}</b></p>
+		{% endif %}
+	</div>
+	{% endif %}
+</div>
+{% endblock %}

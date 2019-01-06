@@ -1,0 +1,29 @@
+"schools":{
+		0: { 
+			"name": "Acadia University",
+			"scale": 7
+		   },
+		1: { 
+			"name": "University of Alberta",
+			"scale": 7
+		   },
+		2: { 
+			"name": "Algoma University",
+			"scale": 3
+		   },	
+		3: { 
+			"name": "Athabasca University",
+			"scale": 7
+		   },
+		4: { 
+			"name": "Bishop's University",
+			"scale": 3
+		   },
+		5: { 
+			"name": "Brandon University",
+			"scale": 7
+		   },
+		6: { 
+			"name": "Brock University",
+			"scale": 7
+		   },

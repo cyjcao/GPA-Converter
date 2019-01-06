@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h3> Select your school: </h3>
+<form action="" method="POST" novalidate>
+	{{ form.hidden_tag() }}
+	{{ form.school }}
+	{{ form.convert }}
+</form>
+
+<div>
+	<p>The OMSAS conversion table can be found <a href="https://www.ouac.on.ca/guide/omsas-conversion-table/">here</a></p>
+</div>
+
+{% endblock %}
