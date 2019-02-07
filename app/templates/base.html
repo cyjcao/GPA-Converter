@@ -2,16 +2,20 @@
 	<head>
 	<title>OMSAS GPA Converter Tool</title>
 	<link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}"/>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
 	</head>
 	<body>
-		<div class="main">
-			<h1>OMSAS GPA CONVERTER TOOL</h1><hr/>
+		<div class="container">
+			<h1 style="text-align:center;">OMSAS GPA CONVERTER TOOL</h1><hr/>
 			{% block content %}{% endblock %}
 		</div>
 	</body>
 	<footer>
-		<p>The OMSAS conversion table can be found <a href="https://www.ouac.on.ca/guide/omsas-conversion-table/">here</a></p>
-		<br/>
-		<p>Created by <a href="https://www.github.com/cyjcao">John Cao</a></p>
+		<div class="container">
+			<p style="text-align: center;">The OMSAS conversion table can be found <a href="https://www.ouac.on.ca/guide/omsas-conversion-table/">here</a></p>
+			<br/>
+			<p style="text-align: center;">Created by <a href="https://www.github.com/cyjcao">John Cao</a></p>
+		</div>
 	</footer>
 </html>

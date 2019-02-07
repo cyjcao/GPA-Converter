@@ -1,11 +1,13 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h3> Select your school: </h3>
-<form action="" method="POST" novalidate>
-	{{ form.hidden_tag() }}
-	{{ form.school }}
-	{{ form.convert }}
-</form>
+<div style="text-align:center;">
+	<h3> Select your school: </h3>
+	<form action="" method="POST" novalidate>
+		{{ form.hidden_tag() }}
+		{{ form.school }}
+		{{ form.convert }}
+	</form>
+</div>
 
 {% endblock %}

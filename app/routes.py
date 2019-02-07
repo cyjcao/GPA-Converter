@@ -72,6 +72,14 @@ def convert():
 	return render_template('convert.html', school=school_name, grade_form=grade_form, grades=grades, gpa=converted_gpa)
 
 
+@app.route('/deleteGrade/<course>', methods=['GET', 'POST'])
+def delete_grade(course):
+	grade = Grade.query.get(course)
+	db.session.delete(grade)
+	db.session.commit()
+	return redirect(url_for('convert'))
+	
+
 def add_grade(grade_form):
 	course = grade_form.course_name.data
 	credits = grade_form.credits.data
@@ -96,3 +104,4 @@ def convert_grades(conversion_table):
 		converted_gpa = total_converted_grade / total_credits
 
 	return grades, converted_gpa
+
